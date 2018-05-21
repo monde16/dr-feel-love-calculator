@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Doctor Feel's Love Calculator
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name 1:</ion-label>
+      <ion-input type="text" [(ngModel)]="name1" (ionChange)="reset()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Name 2:</ion-label>
+      <ion-input type="text" [(ngModel)]="name2" (ionChange)="reset()"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button color="secondary" (click)="calculate()">Calculate!</button>
+
+  <ion-card text-center *ngIf="name1 && name2">
+    <ion-card-header>
+      {{ name1 | uppercase }} & {{ name2 | uppercase }}
+    </ion-card-header>
+    <ion-card-content *ngIf="results !== undefined" class="score">
+      {{ results | number:'1.0-1' }}%
+    </ion-card-content>
+  </ion-card>
 </ion-content>
