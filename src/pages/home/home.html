@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Doctor Feel's Love Calculator
+      Doctor Feel's Calculator
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -22,7 +22,7 @@
 
   <ion-card text-center *ngIf="name1 && name2">
     <ion-card-header>
-      {{ name1 | uppercase }} & {{ name2 | uppercase }}
+      {{ name1 | uppercase }} <ion-icon name="heart" class="and-heart"></ion-icon> {{ name2 | uppercase }}
     </ion-card-header>
     <ion-card-content *ngIf="results !== undefined" class="score">
       {{ results | number:'1.0-1' }}%
